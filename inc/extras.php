@@ -77,3 +77,12 @@ function tdpersona_wp_title( $title, $sep ) {
 	return $title;
 }
 add_filter( 'wp_title', 'tdpersona_wp_title', 10, 2 );
+
+/**
+ * Return logo style class
+ */
+function tdpersona_get_logo_class() {
+	if( get_theme_mod( 'tdpersona_logo_img_style', 'round' ) === 'round' ) {
+		return 'border-radius-circle';
+	}
+}
