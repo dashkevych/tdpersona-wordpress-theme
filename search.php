@@ -14,7 +14,7 @@ get_header(); ?>
 			<?php if ( have_posts() ) : ?>
 
 				<header class="page-header">
-					<h4 class="page-title"><?php printf( __( 'Search Results for: %s', 'tdpersona' ), '<span>' . get_search_query() . '</span>' ); ?></h4>
+					<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'tdpersona' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 				</header><!-- .page-header -->
 
 				<?php while ( have_posts() ) : the_post(); ?>

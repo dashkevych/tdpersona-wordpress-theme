@@ -1,6 +1,6 @@
 <?php
 /**
- *  The template used for displaying post content
+ *  The template used for displaying search content
  *
  * @package tdpersona
  * @since tdpersona 1.0
@@ -19,16 +19,9 @@
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<div class="entry-content">
-	<?php if ( has_post_thumbnail() ): ?>
-		<div class="post-thumb">
-			<?php the_post_thumbnail(); ?>
-		</div><!-- .post-thumb -->
-	<?php endif; ?>
-
-		<?php the_content( esc_html__( 'Continue reading...', 'tdpersona' ) ); ?>
-		<?php wp_link_pages( array( 'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'tdpersona' ), 'after' => '</div>' ) ); ?>
-	</div><!-- .entry-content -->
+	<div class="entry-summary">
+		<?php the_excerpt(); ?>
+	</div><!-- .entry-summary -->
 
 	<footer class="entry-meta bottom">
 		<?php tdpersona_posted_on(); ?>
