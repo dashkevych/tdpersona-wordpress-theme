@@ -34,11 +34,13 @@
 				<?php endif; ?>
 			</div> <!-- .container -->
 
+			<?php if( is_active_sidebar( 'sidebar-4' ) ): ?>
 			<div class="sidebar-btn-container">
 				<a id="sidebar-btn" href="#"><i class="fa fa-plus"></i></a>
 			</div><!-- .sidebar-btn-container -->
+			<?php endif; ?>
 
-		</nav> <!-- .site-navigation -->
+		</nav><!-- .site-navigation -->
 	</div> <!-- .top-navigation -->
 
 	<header id="masthead" class="site-header container" role="banner">
