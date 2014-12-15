@@ -1,5 +1,7 @@
 <?php
 /**
+ * The template used for displaying page content in single.php
+ *
  * @package tdpersona
  * @since tdpersona 1.0
  */
@@ -7,7 +9,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
-		<h2 class="entry-title"><?php the_title(); ?></h2>
+		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 
 		<?php if ( 'post' == get_post_type() ) : ?>
 			<?php tdpersona_post_date(); ?>
@@ -25,7 +27,7 @@
 
 		<?php the_content(); ?>
 
-		<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'tdpersona' ), 'after' => '</div>' ) ); ?>
+		<?php wp_link_pages( array( 'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'tdpersona' ), 'after' => '</div>' ) ); ?>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-meta bottom">
@@ -63,6 +65,6 @@
 			);
 		?>
 
-		<?php edit_post_link( __( 'Edit', 'tdpersona' ), '<span class="edit-link">', '</span>' ); ?>
+		<?php edit_post_link( esc_html__( 'Edit', 'tdpersona' ), '<span class="edit-link">', '</span>' ); ?>
 	</footer><!-- .entry-meta -->
 </article><!-- #post-<?php the_ID(); ?> -->

@@ -1,14 +1,15 @@
 <?php
 /**
+ *  The template used for displaying post content
+ *
  * @package tdpersona
  * @since tdpersona 1.0
  */
 ?>
 
-
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
-		<h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'tdpersona' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
+		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 
 		<?php if ( 'post' == get_post_type() ) : ?>
 			<div class="responsive-date">
@@ -31,14 +32,14 @@
 			</div><!-- .post-thumb -->
 		<?php endif; ?>
 
-		<?php the_content( __( 'Continue reading...', 'tdpersona' ) ); ?>
-		<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'tdpersona' ), 'after' => '</div>' ) ); ?>
+		<?php the_content( esc_html__( 'Continue reading...', 'tdpersona' ) ); ?>
+		<?php wp_link_pages( array( 'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'tdpersona' ), 'after' => '</div>' ) ); ?>
 	</div><!-- .entry-content -->
 	<?php endif; ?>
 
 	<footer class="entry-meta bottom">
 		<?php tdpersona_posted_on(); ?>
-		<?php edit_post_link( __( 'Edit', 'tdpersona' ), '<span class="sep"> / </span> <span class="edit-link">', '</span>' ); ?>
+		<?php edit_post_link( esc_html__( 'Edit', 'tdpersona' ), '<span class="sep"> / </span> <span class="edit-link">', '</span>' ); ?>
 	</footer><!-- .entry-meta -->
 
 	<div class="post-seperator">
