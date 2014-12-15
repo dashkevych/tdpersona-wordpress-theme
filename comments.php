@@ -54,7 +54,7 @@
 
 	<?php
 		// If comments are closed and there are comments then let's leave a little note
-		if ( ! comments_open() && '0' != get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
+		if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
 	?>
 		<p class="nocomments"><?php esc_html_e( 'Comments are closed.', 'tdpersona' ); ?></p>
 	<?php endif; ?>
