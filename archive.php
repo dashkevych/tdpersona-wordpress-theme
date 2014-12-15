@@ -16,7 +16,7 @@ get_header(); ?>
 			<?php if ( have_posts() ) : ?>
 
 				<header class="page-header">
-				<h4 class="page-title">
+				<h1 class="page-title">
 					<?php
 						if ( is_category() ) :
 							single_cat_title();
@@ -68,7 +68,7 @@ get_header(); ?>
 
 						endif;
 					?>
-				</h4>
+				</h1>
 				<?php
 					// Show an optional term description.
 					$term_description = term_description();
