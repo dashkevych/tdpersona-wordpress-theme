@@ -63,13 +63,18 @@ function tdpersona_setup() {
 	 * This theme uses wp_nav_menu() in one location.
 	 */
 	register_nav_menus( array(
-		'primary' => __( 'Primary Menu', 'tdpersona' ),
+		'primary' => esc_html__( 'Primary Menu', 'tdpersona' ),
 	) );
 
 	/**
 	 * Enable support for Post Formats
 	 */
 	add_theme_support( 'post-formats', array( 'audio', 'gallery', 'image', 'video', 'quote', 'link', 'aside', 'status', 'chat' ) );
+
+	/**
+ 	 * Remove Gallery Inline Styling
+ 	 */
+	add_filter( 'use_default_gallery_style', '__return_false' );
 }
 endif; // tdpersona_setup
 add_action( 'after_setup_theme', 'tdpersona_setup' );
@@ -82,7 +87,7 @@ add_action( 'after_setup_theme', 'tdpersona_setup' );
 function tdpersona_widgets_init() {
 
 	register_sidebar( array(
-		'name' => __( 'Sidebar', 'tdpersona' ),
+		'name' => esc_html__( 'Sidebar', 'tdpersona' ),
 		'id' => 'sidebar-4',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => '</aside>',
@@ -91,7 +96,7 @@ function tdpersona_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name' => __( 'Footer Widget #1', 'tdpersona' ),
+		'name' => esc_html__( 'Footer Widget #1', 'tdpersona' ),
 		'id' => 'sidebar-1',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => '</aside>',
@@ -100,7 +105,7 @@ function tdpersona_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name' => __( 'Footer Widget #2', 'tdpersona' ),
+		'name' => esc_html__( 'Footer Widget #2', 'tdpersona' ),
 		'id' => 'sidebar-2',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => '</aside>',
@@ -109,7 +114,7 @@ function tdpersona_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name' => __( 'Footer Widget #3', 'tdpersona' ),
+		'name' => esc_html__( 'Footer Widget #3', 'tdpersona' ),
 		'id' => 'sidebar-3',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => '</aside>',
@@ -163,7 +168,7 @@ add_action('wp_head', 'tdpersona_head');
  */
 function tdpersona_excerpt_more($more) {
     global $post;
-	return '... <a class="moretag" href="'. get_permalink($post->ID) . '"> <strong>Read More</strong></a>';
+	return '... <a class="moretag" href="'. esc_url( get_permalink( $post->ID ) ) . '">'.esc_html__( 'Read More', 'tdpersona' ).'</a>';
 }
 add_filter('excerpt_more', 'tdpersona_excerpt_more');
 
@@ -175,12 +180,6 @@ function tdpersona_add_class_to_excerpt( $excerpt ) {
     return str_replace('<p', '<p class="excerpt"', $excerpt);
 }
 add_filter( "the_excerpt", "tdpersona_add_class_to_excerpt" );
-
-/**
- *	Remove Gallery Inline Styling
- *	@since tdpersona 1.0
- */
-add_filter( 'use_default_gallery_style', '__return_false' );
 
 /**
 *	Add standart post format to archive
