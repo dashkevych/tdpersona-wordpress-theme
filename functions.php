@@ -132,7 +132,7 @@ function tdpersona_scripts() {
 	wp_enqueue_style( 'tdpersona-googlefonts', '//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700' );
 	wp_enqueue_style( 'tdpersona-icons', get_template_directory_uri() . '/css/font-awesome.min.css' );
 	wp_enqueue_style( 'tdpersona-framework', get_template_directory_uri() . '/css/bootstrap.min.css' );
-	wp_enqueue_style( 'style', get_stylesheet_uri() );
+	wp_enqueue_style( 'tdpersona-style', get_stylesheet_uri() );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -142,8 +142,8 @@ function tdpersona_scripts() {
 		wp_enqueue_script( 'keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '20120202' );
 	}
 
-	wp_enqueue_script( 'tdpersona-js-assets', get_template_directory_uri() . '/js/jquery.assets.js', array( 'jquery' ), '201401', true  );
-	wp_enqueue_script( 'theme-script', get_template_directory_uri() . '/js/tdpersona.js', array( 'jquery' ), '201301', true  );
+	wp_register_script( 'tdpersona-js-assets', get_template_directory_uri() . '/js/jquery.assets.js', array( 'jquery' ), '201401', true  );
+	wp_enqueue_script( 'tdpersona-script', get_template_directory_uri() . '/js/tdpersona.js', array( 'tdpersona-js-assets' ), '201301', true  );
 
 }
 add_action( 'wp_enqueue_scripts', 'tdpersona_scripts' );
@@ -186,19 +186,21 @@ add_filter( "the_excerpt", "tdpersona_add_class_to_excerpt" );
 *	@since tdpersona 1.0
 */
 function tdpersona_add_format_standard_archive($query) {
-	if (isset($query->query_vars['post_format']) &&
-		$query->query_vars['post_format'] == 'post-format-standard') {
+	if( isset($query->query_vars['post_format'] ) && $query->query_vars['post_format'] == 'post-format-standard' ) {
 		if (($post_formats = get_theme_support('post-formats')) &&
 			is_array($post_formats[0]) && count($post_formats[0])) {
 			$terms = array();
+
 			foreach ($post_formats[0] as $format) {
 				$terms[] = 'post-format-'.$format;
 			}
+
 			$query->is_tax = null;
 			unset($query->query_vars['post_format']);
 			unset($query->query_vars['taxonomy']);
 			unset($query->query_vars['term']);
 			unset($query->query['post_format']);
+
 			$query->set('tax_query', array(
 				'relation' => 'AND',
 				array(
