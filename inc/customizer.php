@@ -101,5 +101,22 @@ function tdpersona_customize_register( $wp_customize ) {
         ),
         'priority' => 1
     ));
+
+    /* Auto Post Summary */
+	$wp_customize->add_setting( 'tdpersona_blog_auto_summary', array(
+        'default' => '',
+        'sanitize_callback' => 'sanitize_text_field'
+    ) );
+
+	$wp_customize->add_control( 'tdpersona_blog_auto_summary', array(
+        'type' => 'select',
+        'label' => __( 'Automatic Excerpts', 'tdpersona' ),
+        'section' => 'tdpersona_blog_settings',
+        'choices' => array(
+            '1' => __( 'On', 'tdpersona' ),
+            '' => __( 'Off', 'tdpersona' ),
+        ),
+        'priority' => 2
+    ));
 }
 add_action( 'customize_register', 'tdpersona_customize_register');

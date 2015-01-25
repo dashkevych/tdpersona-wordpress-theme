@@ -175,7 +175,7 @@ add_action('wp_head', 'tdpersona_head');
  *	@since tdpersona 1.0
  */
 function tdpersona_excerpt_more( $more ) {
-	return '... <a class="moretag" href="'. esc_url( get_permalink( get_the_ID() ) ) . '">'.esc_html__( 'Read More', 'tdpersona' ).'</a>';
+	return '... <a class="moretag" href="'. esc_url( get_permalink( get_the_ID() ) ) . '">'.esc_html__( 'Continue reading...', 'tdpersona' ).'</a>';
 }
 add_filter('excerpt_more', 'tdpersona_excerpt_more');
 

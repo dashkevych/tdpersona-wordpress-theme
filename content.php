@@ -20,13 +20,18 @@
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
-	<?php if ( has_post_thumbnail() ): ?>
+		<?php if ( has_post_thumbnail() ): ?>
 		<div class="post-thumb">
 			<?php the_post_thumbnail(); ?>
 		</div><!-- .post-thumb -->
-	<?php endif; ?>
+		<?php endif; ?>
 
-		<?php the_content( esc_html__( 'Continue reading...', 'tdpersona' ) ); ?>
+		<?php if ( get_theme_mod( 'tdpersona_blog_auto_summary', '' ) ): ?>
+			<?php the_excerpt(); ?>
+		<?php else: ?>
+			<?php the_content( esc_html__( 'Continue reading...', 'tdpersona' ) ); ?>
+		<?php endif; ?>
+
 		<?php wp_link_pages( array( 'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'tdpersona' ), 'after' => '</div>' ) ); ?>
 	</div><!-- .entry-content -->
 
