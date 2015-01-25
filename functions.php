@@ -54,6 +54,14 @@ function tdpersona_setup() {
 		'default-image' => '',
 	) ) );
 
+	/*
+	 * Let WordPress manage the document title.
+	 * By adding theme support, we declare that this theme does not use a
+	 * hard-coded <title> tag in the document head, and expect WordPress to
+	 * provide it for us.
+ 	 */
+ 	add_theme_support( 'title-tag' );
+
 	/**
 	 * Customizer additions
 	 */
@@ -87,7 +95,7 @@ add_action( 'after_setup_theme', 'tdpersona_setup' );
 function tdpersona_widgets_init() {
 
 	register_sidebar( array(
-		'name' => esc_html__( 'Sidebar', 'tdpersona' ),
+		'name' => __( 'Sidebar', 'tdpersona' ),
 		'id' => 'sidebar-4',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => '</aside>',
@@ -96,7 +104,7 @@ function tdpersona_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name' => esc_html__( 'Footer Widget #1', 'tdpersona' ),
+		'name' => __( 'Footer Widget #1', 'tdpersona' ),
 		'id' => 'sidebar-1',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => '</aside>',
@@ -105,7 +113,7 @@ function tdpersona_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name' => esc_html__( 'Footer Widget #2', 'tdpersona' ),
+		'name' => __( 'Footer Widget #2', 'tdpersona' ),
 		'id' => 'sidebar-2',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => '</aside>',
@@ -114,7 +122,7 @@ function tdpersona_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name' => esc_html__( 'Footer Widget #3', 'tdpersona' ),
+		'name' => __( 'Footer Widget #3', 'tdpersona' ),
 		'id' => 'sidebar-3',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => '</aside>',
@@ -166,9 +174,8 @@ add_action('wp_head', 'tdpersona_head');
  *	Customize excerpts more tag
  *	@since tdpersona 1.0
  */
-function tdpersona_excerpt_more($more) {
-    global $post;
-	return '... <a class="moretag" href="'. esc_url( get_permalink( $post->ID ) ) . '">'.esc_html__( 'Read More', 'tdpersona' ).'</a>';
+function tdpersona_excerpt_more( $more ) {
+	return '... <a class="moretag" href="'. esc_url( get_permalink( get_the_ID() ) ) . '">'.esc_html__( 'Read More', 'tdpersona' ).'</a>';
 }
 add_filter('excerpt_more', 'tdpersona_excerpt_more');
 

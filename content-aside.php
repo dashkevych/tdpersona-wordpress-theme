@@ -1,6 +1,6 @@
 <?php
 /**
- * The template used for displaying quote content
+ * The template used for displaying aside content
  *
  * @package tdpersona
  * @since tdpersona 1.0
@@ -13,14 +13,11 @@
 	<?php if ( 'post' == get_post_type() ) : ?>
 		<?php tdpersona_post_date(); ?>
 	<?php endif; ?>
-	</header>
+	</header><!-- .entry-header -->
 
 	<div class="entry-content">
-		<?php
-			$content = get_post_field('post_content', $post->ID);
-			echo $content;
-		?>
-	</div><!-- .quote-entry-content -->
+		<?php echo get_the_content(); ?>
+	</div><!-- .entry-content -->
 
 	<footer class="entry-meta bottom">
 		<?php edit_post_link( esc_html__( 'Edit', 'tdpersona' ), '<span class="edit-link">', '</span>' ); ?>

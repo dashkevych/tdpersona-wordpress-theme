@@ -140,45 +140,46 @@ function tdpersona_categorized_blog() {
  * @since tdpersona 1.0
  */
  function tdpersona_post_date() {
- 	$date_format = get_theme_mod( 'tdpersona_blog_date_format', 'mdy' );
  	$day = get_the_time('d');
  	$month = get_the_time('m');
  	$year = get_the_time('Y');
 
- 	if( $date_format === 'dmy' ) {
+ 	if( 'dmy' === get_theme_mod( 'tdpersona_blog_date_format', 'mdy' ) ) {
  		$date_format_html = '<span class="m-d">'.$day.'/'.$month.'</span><span class="year">'.$year.'</span>';
  	} else {
 		$date_format_html = '<span class="m-d">'.$month.'/'.$day.'</span><span class="year">'.$year.'</span>';
  	}
 
- 	if ( get_post_format() === 'quote' ) {
+ 	$current_format = get_post_format();
+
+ 	if ( 'quote' === $current_format ) {
  		$post_icon = '<i class="fa fa-quote-right"></i>';
- 	} else if ( get_post_format() === 'aside' ) {
+ 	} else if ( 'aside' === $current_format ) {
  		$post_icon = '<i class="fa fa-thumb-tack"></i>';
- 	} else if ( get_post_format() === 'gallery' ) {
+ 	} else if ( 'gallery' === $current_format ) {
  		$post_icon = '<i class="fa fa-camera"></i>';
- 	} else if ( get_post_format() === 'image' ) {
+ 	} else if ( 'image' === $current_format ) {
  		$post_icon = '<i class="fa fa-picture-o"></i>';
- 	} else if ( get_post_format() === 'status' ) {
+ 	} else if ( 'status' === $current_format ) {
  		$post_icon = '<i class="fa fa-bullhorn"></i>';
- 	} else if ( get_post_format() === 'video' ) {
+ 	} else if ( 'video' === $current_format ) {
  		$post_icon = '<i class="fa fa-film"></i>';
- 	} else if ( get_post_format() === 'audio' ) {
+ 	} else if ( 'audio' === $current_format ) {
  		$post_icon = '<i class="fa fa-music"></i>';
- 	} else if ( get_post_format() === 'chat' ) {
+ 	} else if ( 'chat' === $current_format ) {
  		$post_icon = '<i class="fa fa-comments-o"></i>';
- 	} else if ( get_post_format() === 'link' ) {
+ 	} else if ( 'link' === $current_format ) {
  		$post_icon = '<i class="fa fa-link"></i>';
  	}  else {
  		$post_icon = '<i class="fa fa-pencil"></i>';
  	}
 
  	$output = '<div class="post-icon-box border-radius-circle">';
-	$output .= '<a href="'.get_permalink().'">'.$post_icon.'</a>';
+	$output .= '<a href="'.esc_url( get_permalink() ).'">'.$post_icon.'</a>';
 	$output .= '</div><!-- .post-icon-box -->';
 
 	$output .= '<div class="entry-date">';
-	$output .= '<a href="'.get_permalink().'">'.$date_format_html.'</a>';
+	$output .= '<a href="'.esc_url( get_permalink() ).'">'.$date_format_html.'</a>';
 	$output .= '</div><!-- .entry-date -->';
 
 	echo $output;
@@ -211,3 +212,94 @@ function tdpersona_category_transient_flusher() {
 }
 add_action( 'edit_category', 'tdpersona_category_transient_flusher' );
 add_action( 'save_post', 'tdpersona_category_transient_flusher' );
+
+if ( ! function_exists( 'the_archive_title' ) ) :
+/**
+ * Shim for `the_archive_title()`.
+ *
+ * Display the archive title based on the queried object.
+ *
+ * @todo Remove this function when WordPress 4.3 is released.
+ *
+ * @param string $before Optional. Content to prepend to the title. Default empty.
+ * @param string $after  Optional. Content to append to the title. Default empty.
+ */
+function the_archive_title( $before = '', $after = '' ) {
+	if ( is_category() ) {
+		$title = sprintf( __( 'Category: %s', 'tdpersona' ), single_cat_title( '', false ) );
+	} elseif ( is_tag() ) {
+		$title = sprintf( __( 'Tag: %s', 'tdpersona' ), single_tag_title( '', false ) );
+	} elseif ( is_author() ) {
+		$title = sprintf( __( 'Author: %s', 'tdpersona' ), '<span class="vcard">' . get_the_author() . '</span>' );
+	} elseif ( is_year() ) {
+		$title = sprintf( __( 'Year: %s', 'tdpersona' ), get_the_date( _x( 'Y', 'yearly archives date format', 'tdpersona' ) ) );
+	} elseif ( is_month() ) {
+		$title = sprintf( __( 'Month: %s', 'tdpersona' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'tdpersona' ) ) );
+	} elseif ( is_day() ) {
+		$title = sprintf( __( 'Day: %s', 'tdpersona' ), get_the_date( _x( 'F j, Y', 'daily archives date format', 'tdpersona' ) ) );
+	} elseif ( is_tax( 'post_format' ) ) {
+		if ( is_tax( 'post_format', 'post-format-aside' ) ) {
+			$title = _x( 'Asides', 'post format archive title', 'tdpersona' );
+		} elseif ( is_tax( 'post_format', 'post-format-gallery' ) ) {
+			$title = _x( 'Galleries', 'post format archive title', 'tdpersona' );
+		} elseif ( is_tax( 'post_format', 'post-format-image' ) ) {
+			$title = _x( 'Images', 'post format archive title', 'tdpersona' );
+		} elseif ( is_tax( 'post_format', 'post-format-video' ) ) {
+			$title = _x( 'Videos', 'post format archive title', 'tdpersona' );
+		} elseif ( is_tax( 'post_format', 'post-format-quote' ) ) {
+			$title = _x( 'Quotes', 'post format archive title', 'tdpersona' );
+		} elseif ( is_tax( 'post_format', 'post-format-link' ) ) {
+			$title = _x( 'Links', 'post format archive title', 'tdpersona' );
+		} elseif ( is_tax( 'post_format', 'post-format-status' ) ) {
+			$title = _x( 'Statuses', 'post format archive title', 'tdpersona' );
+		} elseif ( is_tax( 'post_format', 'post-format-audio' ) ) {
+			$title = _x( 'Audio', 'post format archive title', 'tdpersona' );
+		} elseif ( is_tax( 'post_format', 'post-format-chat' ) ) {
+			$title = _x( 'Chats', 'post format archive title', 'tdpersona' );
+		}
+	} elseif ( is_post_type_archive() ) {
+		$title = sprintf( __( 'Archives: %s', 'tdpersona' ), post_type_archive_title( '', false ) );
+	} elseif ( is_tax() ) {
+		$tax = get_taxonomy( get_queried_object()->taxonomy );
+		/* translators: 1: Taxonomy singular name, 2: Current taxonomy term */
+		$title = sprintf( __( '%1$s: %2$s', 'tdpersona' ), $tax->labels->singular_name, single_term_title( '', false ) );
+	} else {
+		$title = __( 'Archives', 'tdpersona' );
+	}
+	/**
+	 * Filter the archive title.
+	 *
+	 * @param string $title Archive title to be displayed.
+	 */
+	$title = apply_filters( 'get_the_archive_title', $title );
+	if ( ! empty( $title ) ) {
+		echo $before . $title . $after;
+	}
+}
+endif;
+
+if ( ! function_exists( 'the_archive_description' ) ) :
+/**
+ * Shim for `the_archive_description()`.
+ *
+ * Display category, tag, or term description.
+ *
+ * @todo Remove this function when WordPress 4.3 is released.
+ *
+ * @param string $before Optional. Content to prepend to the description. Default empty.
+ * @param string $after  Optional. Content to append to the description. Default empty.
+ */
+function the_archive_description( $before = '', $after = '' ) {
+	$description = apply_filters( 'get_the_archive_description', term_description() );
+	if ( ! empty( $description ) ) {
+		/**
+		 * Filter the archive description.
+		 *
+		 * @see term_description()
+		 *
+		 * @param string $description Archive description to be displayed.
+		 */
+		echo $before . $description . $after;
+	}
+}
+endif;
