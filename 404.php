@@ -13,7 +13,7 @@ get_header(); ?>
 
 			<article id="post-0" class="post error404 not-found">
 				<header class="entry-header">
-					<h2 class="entry-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'tdpersona' ); ?></h2>
+					<h1 class="entry-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'tdpersona' ); ?></h1>
 				</header><!-- .entry-header -->
 
 				<div class="entry-content">
