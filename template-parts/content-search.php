@@ -2,7 +2,7 @@
 /**
  *  The template used for displaying search content.
  *
- * @package tdPersona
+ * @package tdpersona
  */
 ?>
 

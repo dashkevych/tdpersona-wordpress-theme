@@ -55,8 +55,8 @@ function tdpersona_setup() {
 	 * By adding theme support, we declare that this theme does not use a
 	 * hard-coded <title> tag in the document head, and expect WordPress to
 	 * provide it for us.
- 	 */
- 	add_theme_support( 'title-tag' );
+	 */
+	add_theme_support( 'title-tag' );
 
 	/**
 	 * This theme uses wp_nav_menu() in one location.
@@ -99,7 +99,7 @@ add_action( 'after_setup_theme', 'tdpersona_setup' );
 function tdpersona_widgets_init() {
 
 	register_sidebar( array(
-		'name' => __( 'Sidebar', 'tdpersona' ),
+		'name' => esc_html__( 'Sidebar', 'tdpersona' ),
 		'id' => 'sidebar-4',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => '</aside>',
@@ -108,7 +108,7 @@ function tdpersona_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name' => __( 'Footer Widget #1', 'tdpersona' ),
+		'name' => esc_html__( 'Footer Widget #1', 'tdpersona' ),
 		'id' => 'sidebar-1',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => '</aside>',
@@ -117,7 +117,7 @@ function tdpersona_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name' => __( 'Footer Widget #2', 'tdpersona' ),
+		'name' => esc_html__( 'Footer Widget #2', 'tdpersona' ),
 		'id' => 'sidebar-2',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => '</aside>',
@@ -126,7 +126,7 @@ function tdpersona_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name' => __( 'Footer Widget #3', 'tdpersona' ),
+		'name' => esc_html__( 'Footer Widget #3', 'tdpersona' ),
 		'id' => 'sidebar-3',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => '</aside>',
@@ -208,14 +208,14 @@ add_action('wp_head', 'tdpersona_head');
 function tdpersona_excerpt_more( $more ) {
 	return '... <a class="moretag" href="'. esc_url( get_permalink( get_the_ID() ) ) . '">'.esc_html__( 'Continue reading...', 'tdpersona' ).'</a>';
 }
-add_filter('excerpt_more', 'tdpersona_excerpt_more');
+add_filter( 'excerpt_more', 'tdpersona_excerpt_more' );
 
 /**
 *	Add class to excerpt paragraph
 *	@since tdpersona 1.0
 */
 function tdpersona_add_class_to_excerpt( $excerpt ) {
-    return str_replace('<p', '<p class="excerpt"', $excerpt);
+    return str_replace( '<p', '<p class="excerpt"', $excerpt );
 }
 add_filter( "the_excerpt", "tdpersona_add_class_to_excerpt" );
 

@@ -8,7 +8,6 @@
  * located in the functions.php file.
  *
  * @package tdpersona
- * @since tdpersona 1.0
  */
 ?>
 

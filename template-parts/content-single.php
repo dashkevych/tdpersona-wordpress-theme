@@ -2,7 +2,7 @@
 /**
  * The template used for displaying page content in single.php.
  *
- * @package tdPersona
+ * @package tdpersona
  */
 ?>
 

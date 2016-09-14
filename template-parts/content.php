@@ -50,4 +50,4 @@
         </button><!-- .go-top-box -->
 	</div><!-- .post-seperator -->
 
-</article><!-- #post-<?php the_ID(); ?> -->
+</article><!-- #post-# ?> -->

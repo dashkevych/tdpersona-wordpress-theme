@@ -25,7 +25,7 @@ $home_url = get_home_url();
             <li><a class="border-radius-circle td-tooltip" href="<?php echo esc_url( $home_url . '/type/link/' ); ?>" title="<?php esc_attr_e( 'Link', 'tdpersona' ); ?>"><i class="fa fa-link"></i></a></li>
             <li><a class="border-radius-circle td-tooltip" href="<?php echo esc_url( $home_url . '/type/aside/' ); ?>" title="<?php esc_attr_e( 'Aside', 'tdpersona' ); ?>"><i class="fa fa-thumb-tack"></i></a></li>
             <li><a class="border-radius-circle td-tooltip" href="<?php echo esc_url( $home_url . '/type/status/' ); ?>" title="<?php esc_attr_e( 'Status', 'tdpersona' ); ?>"><i class="fa fa-bullhorn"></i></a></li>
-            <li><a class="border-radius-circle td-tooltip" href="<?php echo esc_url( $home_url . '/type/chat/' ); ?>" title="<?php esc_attr_e( 'Chat', 'tdpersona '); ?>"><i class="fa fa-comments-o"></i></a></li>
+            <li><a class="border-radius-circle td-tooltip" href="<?php echo esc_url( $home_url . '/type/chat/' ); ?>" title="<?php esc_attr_e( 'Chat', 'tdpersona'); ?>"><i class="fa fa-comments-o"></i></a></li>
             <li><a id="post-formats-hide-btn" class="border-radius-circle td-tooltip" href="#" title="<?php esc_attr_e( 'Close', 'tdpersona' ); ?>"><i class="fa fa-times"></i></a></li>
         </ul><!-- .list-unstyled -->
     </div><!-- .post-formats-navigation-container -->
