@@ -4,16 +4,14 @@
  *
  * Displays all of the <head> section and everything up till <div id="main">
  *
- * @package tdPersona
+ * @package tdpersona
  */
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
-<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
-<title><?php wp_title( '|', true, 'right' ); ?></title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11">
-<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
 <?php wp_head(); ?>
 </head>
@@ -25,7 +23,7 @@
 		<nav role="navigation" id="site-navigation" class="site-navigation main-navigation" data-small-nav-title="<?php esc_html_e( 'Navigation', 'tdpersona' ); ?>">
 			<div class="container">
 				<?php if ( has_nav_menu( 'primary' ) ): ?>
-					<?php wp_nav_menu( array( 'container' => 'ul', 'menu_class' => 'nav-bar', 'theme_location' => 'primary') ); ?>
+					<?php wp_nav_menu( array( 'container' => 'ul', 'menu_class' => 'nav-bar', 'theme_location' => 'primary' ) ); ?>
 				<?php else: ?>
 					<ul class="nav-bar">
 						<?php wp_list_pages('title_li=' ); ?>
