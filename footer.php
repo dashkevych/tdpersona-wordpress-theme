@@ -4,8 +4,7 @@
  *
  * Contains the closing of the id=main div and all content after
  *
- * @package tdpersona
- * @since tdpersona 1.0
+ * @package tdPersona
  */
 ?>
 
@@ -34,11 +33,12 @@
 				<?php endif; ?>
 
 			</div><!-- .row -->
+            
 			<div class="site-info">
 				<div class="site-info-inner">
 					&copy; <?php echo date('Y'); ?> <a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
 					<span class="sep">&mdash;</span>
-					<?php echo sprintf( __( '%1$s by %2$s', 'tdpersona' ), '<a href="http://demo.tdwp.us/tdpersona/" target="_blank">tdPersona Theme</a>', 'Taras Dashkevych' ); ?>
+					<?php printf( esc_html__( '%1$s by %2$s', 'tdpersona' ), 'tdPersona', '<a href="https://themesharbor.com/" rel="designer">Themes Harbor</a>' ); ?>
 				</div><!-- .site-info-inner -->
 			</div><!-- .site-info -->
 		</footer><!-- #colophon .site-footer -->

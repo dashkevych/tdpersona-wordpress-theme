@@ -1330,8 +1330,9 @@ object {
 	margin-bottom: 15px;
 }
 
-/* =Footer
------------------------------------------------ */
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
 .footer-container {
 	background: #222222;
 	padding-top: 30px;
@@ -1339,11 +1340,12 @@ object {
 }
 
 .site-footer {
-	color: #ccc;
+	color: #cccccc;
 }
 
 .site-footer a {
-	color: #aaa;
+	color: #aaaaaa;
+    font-weight: 400;
 }
 
 .site-footer a:hover {
