@@ -166,6 +166,15 @@ input[type="submit"]:hover {
 	background-color: #f2f2f2;
 }
 
+.site-content .posts-navigation .nav-previous a:before,
+.site-content .posts-navigation .nav-next a:after {
+	font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+}
+
 /* Alignment */
 .alignleft {
 	display: inline;
@@ -944,13 +953,10 @@ object {
 	margin: 0;
 	overflow: hidden;
 }
+
 .site-content .nav-previous {
 	float: left;
 	width: 50%;
-}
-
-.site-content .nav-previous i {
-	margin-right: 6px;
 }
 
 .site-content .nav-next {
@@ -959,8 +965,20 @@ object {
 	width: 50%;
 }
 
-.site-content .nav-next i {
-	margin-left: 6px;
+.site-content .nav-next {
+	float: right;
+	text-align: right;
+	width: 50%;
+}
+
+.site-content .posts-navigation .nav-previous a:before {
+    content: "\f100";
+    padding-right: 6px;
+}
+
+.site-content .posts-navigation .nav-next a:after {
+    content: "\f101";
+    padding-left: 6px;
 }
 
 .site-content .site-navigation a {

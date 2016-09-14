@@ -2,8 +2,7 @@
 /**
  * The template for displaying Search Results pages.
  *
- * @package tdpersona
- * @since tdpersona 1.0
+ * @package tdPersona
  */
 
 get_header(); ?>
@@ -23,7 +22,7 @@ get_header(); ?>
 
 				<?php endwhile; ?>
 
-				<?php tdpersona_content_nav( 'nav-below' ); ?>
+				<?php the_posts_navigation(); ?>
 
 			<?php else : ?>
 
@@ -34,6 +33,6 @@ get_header(); ?>
 			</div><!-- #content .site-content -->
 		</section><!-- #primary .content-area -->
 
-<?php get_sidebar(); ?>
+        <?php get_sidebar(); ?>
 
 <?php get_footer(); ?>

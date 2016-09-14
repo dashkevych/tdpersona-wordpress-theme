@@ -4,8 +4,7 @@
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package tdpersona
- * @since tdpersona 1.0
+ * @package tdPersona
  */
 
 get_header(); ?>
@@ -28,7 +27,7 @@ get_header(); ?>
 
 				<?php endwhile; ?>
 
-				<?php tdpersona_content_nav( 'nav-below' ); ?>
+				<?php the_posts_navigation(); ?>
 
 			<?php else : ?>
 
