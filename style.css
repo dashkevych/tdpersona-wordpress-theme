@@ -167,7 +167,8 @@ input[type="submit"]:hover {
 }
 
 .site-content .posts-navigation .nav-previous a:before,
-.site-content .posts-navigation .nav-next a:after {
+.site-content .posts-navigation .nav-next a:after,
+.has-icon:before {
 	font-family: FontAwesome;
     font-style: normal;
     font-weight: normal;
@@ -592,7 +593,11 @@ input[type="submit"]:hover {
 	width: 100%;
 }
 
-.post-seperator .go-top-box {
+.post-seperator button:before {
+    content: "\f062";
+}
+
+.post-seperator button {
 	position: absolute;
 	bottom: -16px;
 	left: 50%;
@@ -600,14 +605,12 @@ input[type="submit"]:hover {
 	padding: 3px 7px;
 	background: #ffffff;
 	border: 3px solid #f2f2f2;
-
 	font-size: 10px;
 	color: #aaaaaa;
 }
 
-.post-seperator .go-top-box:hover {
+.post-seperator button:hover {
 	color: #222222;
-	cursor: pointer;
 }
 
 .post-thumb,
@@ -639,19 +642,19 @@ input[type="submit"]:hover {
 	font-weight: 400;
 }
 
+.hentry .entry-meta.bottom .edit-link:before {
+    content: "/";
+    margin: 0 6px 0 4px;
+}
+
 .single .byline,
 .group-blog .byline {
 	display: inline;
 }
 
-.entry-content,
-.entry-summary {
-	margin: 1.5em 0 0;
-}
-
 .page-links {
 	clear: both;
-	margin: 0 0 1.5em;
+	margin: 0 0 30px;
 }
 
 .sticky {}
