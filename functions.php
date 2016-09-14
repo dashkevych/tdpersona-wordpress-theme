@@ -199,7 +199,7 @@ function tdpersona_head() {
 	<![endif]-->
 	<?php
 }
-add_action('wp_head', 'tdpersona_head');
+add_action( 'wp_head', 'tdpersona_head' );
 
 /**
  *	Customize excerpts more tag
