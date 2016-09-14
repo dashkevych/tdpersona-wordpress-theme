@@ -1055,8 +1055,7 @@ object {
 
 #comments .comment-author,
 #comments .comment-awaiting-moderation,
-#comments .comment-metadata,
-#comments .comment-meta {
+#comments .comment-metadata {
 	padding-left: 86px;
 }
 
