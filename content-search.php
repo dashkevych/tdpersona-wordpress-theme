@@ -25,6 +25,11 @@
 
 	<footer class="entry-meta bottom">
 		<?php tdpersona_posted_on(); ?>
+        
+        <?php if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) : ?>
+        <span class="comments-link"><?php comments_popup_link( esc_html__( 'Leave a comment', 'tdpersona' ), esc_html__( '1 Comment', 'tdpersona' ), esc_html__( '% Comments', 'tdpersona' ) ); ?></span>
+        <?php endif; ?>
+        
 		<?php edit_post_link( esc_html__( 'Edit', 'tdpersona' ), '<span class="edit-link">', '</span>' ); ?>
 	</footer><!-- .entry-meta -->
 

@@ -642,7 +642,9 @@ input[type="submit"]:hover {
 	font-weight: 400;
 }
 
-.hentry .entry-meta.bottom .edit-link:before {
+.hentry .entry-meta.bottom .edit-link:before,
+.hentry .entry-meta.bottom .entry-cats:before,
+.hentry .entry-meta.bottom .comments-link:before {
     content: "/";
     margin: 0 6px 0 4px;
 }
