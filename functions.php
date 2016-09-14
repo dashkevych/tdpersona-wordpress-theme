@@ -138,11 +138,38 @@ function tdpersona_widgets_init() {
 add_action( 'widgets_init', 'tdpersona_widgets_init' );
 
 /**
+ * Register Google Fonts.
+ */
+function tdpersona_google_fonts() {
+	$fonts_url = '';
+    
+    /* Translators: If there are characters in your language that are not
+	 * supported by Source Sans Pro, translate this to 'off'. Do not translate
+	 * into your own language.
+	 */
+	$sans_font = _x( 'on', 'Source Sans Pro: on or off', 'tdpersona' );
+
+	if ( 'off' !== $sans_font ) {
+		$font_families = array();
+		$font_families[] = 'Source Sans Pro:300,300i,700,700i';
+
+		$query_args = array(
+			'family' => urlencode( implode( '|', $font_families ) ),
+			'subset' => urlencode( 'latin,latin-ext,cyrillic,cyrillic-ext' ),
+		);
+
+		$fonts_url = add_query_arg( $query_args, "//fonts.googleapis.com/css" );
+	}
+
+	return $fonts_url;
+}
+
+/**
  * Enqueue scripts and styles
  */
 function tdpersona_scripts() {
-	wp_enqueue_style( 'tdpersona-googlefonts', '//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700' );
-	wp_enqueue_style( 'tdpersona-icons', get_template_directory_uri() . '/css/font-awesome.min.css' );
+	wp_enqueue_style( 'tdpersona-googlefonts', tdpersona_google_fonts(), array(), null );
+	wp_enqueue_style( 'tdpersona-icons', get_template_directory_uri() . '/css/font-awesome.css' );
 	wp_enqueue_style( 'tdpersona-framework', get_template_directory_uri() . '/css/bootstrap.min.css' );
 	wp_enqueue_style( 'tdpersona-style', get_stylesheet_uri() );
 
