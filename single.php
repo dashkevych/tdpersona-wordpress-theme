@@ -2,32 +2,30 @@
 /**
  * The Template for displaying all single posts.
  *
- * @package tdpersona
- * @since tdpersona 1.0
+ * @package tdPersona
  */
 
 get_header(); ?>
 
-		<div id="primary" class="content-area">
-			<div id="content" class="site-content" role="main">
+    <div id="primary" class="content-area">
+        <div id="content" class="site-content" role="main">
 
-			<?php while ( have_posts() ) : the_post(); ?>
+        <?php while ( have_posts() ) : the_post(); ?>
 
-				<?php get_template_part( 'content', 'single' ); ?>
+            <?php get_template_part( 'content', 'single' ); ?>
 
-				<?php tdpersona_content_nav( 'nav-below' ); ?>
+            <?php the_post_navigation(); ?>
 
-				<?php
-					// If comments are open or we have at least one comment, load up the comment template
-					if ( comments_open() || get_comments_number() ) :
-						comments_template();
-					endif;
-				?>
+            <?php
+                if ( comments_open() || get_comments_number() ) {
+                    comments_template();
+                }
+            ?>
 
-			<?php endwhile; ?>
+        <?php endwhile; ?>
 
-			</div><!-- #content .site-content -->
-		</div><!-- #primary .content-area -->
+        </div><!-- #content .site-content -->
+    </div><!-- #primary .content-area -->
 
 <?php get_sidebar(); ?>
 

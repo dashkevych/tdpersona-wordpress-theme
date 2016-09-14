@@ -2,8 +2,7 @@
 /**
  * The template used for displaying page content in page.php
  *
- * @package tdpersona
- * @since tdpersona 1.0
+ * @package tdPersona
  */
 ?>
 
@@ -15,7 +14,6 @@
 	<div class="entry-content">
 		<?php the_content(); ?>
 		<?php wp_link_pages( array( 'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'tdpersona' ), 'after' => '</div>' ) ); ?>
-		<div class="clear"></div>
 		<?php edit_post_link( esc_html__( 'Edit', 'tdpersona' ), '<span class="edit-link">', '</span>' ); ?>
 	</div><!-- .entry-content -->
-</article><!-- #post-<?php the_ID(); ?> -->
+</article><!-- #post-# -->

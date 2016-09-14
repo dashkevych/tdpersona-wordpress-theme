@@ -1,9 +1,8 @@
 <?php
 /**
- * The template used for displaying page content in single.php
+ * The template used for displaying page content in single.php.
  *
- * @package tdpersona
- * @since tdpersona 1.0
+ * @package tdPersona
  */
 ?>
 
@@ -33,10 +32,10 @@
 	<footer class="entry-meta bottom">
 		<?php
 			/* translators: used between list items, there is a space after the comma */
-			$category_list = get_the_category_list( __( ', ', 'tdpersona' ) );
+			$category_list = get_the_category_list( ', ' );
 
 			/* translators: used between list items, there is a space after the comma */
-			$tag_list = get_the_tag_list( '', __( ', ', 'tdpersona' ) );
+			$tag_list = get_the_tag_list( '', ', ' );
 
 			if ( ! tdpersona_categorized_blog() ) {
 				// This blog only has 1 category so we just need to worry about tags in the meta text
@@ -67,4 +66,4 @@
 
 		<?php edit_post_link( esc_html__( 'Edit', 'tdpersona' ), '<span class="edit-link">', '</span>' ); ?>
 	</footer><!-- .entry-meta -->
-</article><!-- #post-<?php the_ID(); ?> -->
+</article><!-- #post -->

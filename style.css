@@ -166,8 +166,8 @@ input[type="submit"]:hover {
 	background-color: #f2f2f2;
 }
 
-.site-content .posts-navigation .nav-previous a:before,
-.site-content .posts-navigation .nav-next a:after,
+.site-content .navigation .nav-previous a:before,
+.site-content .navigation .nav-next a:after,
 .has-icon:before {
 	font-family: FontAwesome;
     font-style: normal;
@@ -954,7 +954,7 @@ object {
 
 /* =Navigation
 ----------------------------------------------- */
-.site-content .site-navigation {
+.site-content .navigation {
 	margin: 0;
 	overflow: hidden;
 }
@@ -976,12 +976,12 @@ object {
 	width: 50%;
 }
 
-.site-content .posts-navigation .nav-previous a:before {
+.site-content .navigation .nav-previous a:before {
     content: "\f100";
     padding-right: 6px;
 }
 
-.site-content .posts-navigation .nav-next a:after {
+.site-content .navigation .nav-next a:after {
     content: "\f101";
     padding-left: 6px;
 }
