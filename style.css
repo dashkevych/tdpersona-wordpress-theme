@@ -339,6 +339,22 @@ input[type="submit"]:hover {
 	line-height: 1.2;
 }
 
+.main-navigation li.menu-item-has-children > a:after,
+.main-navigation li.page_item_has_children > a:after {
+	content: "\25bc";
+	position: relative;
+	padding-left: 9px;
+    font-size: 6px;
+    top: -2px
+}
+
+.main-navigation .sub-menu li.menu-item-has-children > a:after,
+.main-navigation .children li.page_item_has_children > a:after {
+	content: "\25b6";
+	left: 2px;
+}
+
+
 .main-navigation .nav-bar li:hover,
 .main-navigation .nav-bar li.current-menu-item .sub-menu li a:hover,
 .main-navigation .nav-bar li.current_page_item a,
