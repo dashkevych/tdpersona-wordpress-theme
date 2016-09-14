@@ -1,19 +1,19 @@
 /*
 Theme Name: tdPersona
-Theme URI: http://demo.tdwp.us/tdpersona/
-Author: Taras Dashkevych
-Description: tdPersona is a responsive WordPress theme with a clean, simple and elegant design. Perfect theme for any bloggers.
-Version: 1.0.2
+Theme URI: http://demo.themesharbor.com/tdpersona/
+Author: Themes Harbor
+Author URI: https://themesharbor.com/
+Description: tdPersona is minimalist WordPress Theme for any bloggers. This theme is a perfect choice for personal blogs. tdPersona supports all Post Formats that allow you to share your articles, images, videos, musics, quotes, etc. This theme is not just clean and simple but it’s also fully responsive.
+Version: 2.0
+Text Domain: tdpersona
 License: GNU General Public License v2 or later
 License URI: license.txt
-Tags: light, dark, white, custom-background, custom-colors, one-column, sticky-post, featured-images, custom-menu, theme-options, fluid-layout, threaded-comments
+Tags: custom-background, custom-colors, one-column, sticky-post, featured-images, custom-menu, theme-options, threaded-comments
 
 tdPersona WordPress Theme, copyright 2014 Taras Dashkevych
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
-
-tdPersona is based on Underscores http://underscores.me/, (C) 2012-2013 Automattic, Inc.
 
 */
 
@@ -22,7 +22,7 @@ tdPersona is based on Underscores http://underscores.me/, (C) 2012-2013 Automatt
 ----------------------------------------------- */
 body {
 	background: #fbfbfb;
-	font-family: 'Source Sans Pro',"Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-family: 'Source Sans Pro', "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-weight: 300;
 	font-size: 16px;
 	color: #434343;
