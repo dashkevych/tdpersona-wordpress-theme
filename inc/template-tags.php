@@ -139,3 +139,33 @@ function tdpersona_category_transient_flusher() {
 }
 add_action( 'edit_category', 'tdpersona_category_transient_flusher' );
 add_action( 'save_post', 'tdpersona_category_transient_flusher' );
+
+
+if ( ! function_exists( 'tdpersona_the_custom_logo' ) ) :
+/**
+ * Displays the optional custom logo.
+ *
+ * Does nothing if the custom logo is not available.
+ *
+ * @since tdpersona 2.0
+ */
+function tdpersona_the_custom_logo() {
+	if ( function_exists( 'the_custom_logo' ) ) {
+		the_custom_logo();
+	}
+}
+endif;
+
+/**
+ * Adds custom class to uploaded logo.
+ *
+ * @since tdpersona 2.0
+ */
+function tdpersona_the_custom_logo_class( $attr ) {
+    if( isset( $attr['class'] )  && 'custom-logo' === $attr['class'] ) {
+        $attr['class'] .= ' ' . esc_attr( tdpersona_get_logo_class() );   
+    }
+
+    return $attr;
+}
+add_filter( 'wp_get_attachment_image_attributes', 'tdpersona_the_custom_logo_class' );

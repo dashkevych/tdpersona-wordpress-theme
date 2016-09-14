@@ -4,8 +4,7 @@
  *
  * Displays all of the <head> section and everything up till <div id="main">
  *
- * @package tdpersona
- * @since tdpersona 1.0
+ * @package tdPersona
  */
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -44,16 +43,10 @@
 	</div> <!-- .top-navigation -->
 
 	<header id="masthead" class="site-header container" role="banner">
-		<?php $logo = get_theme_mod( 'tdpersona_logo_img' ); ?>
-
 		<div class="brand <?php echo esc_attr( get_theme_mod( 'tdpersona_header_align', 'center' ) ); ?>">
-			<?php if( !empty( $logo ) ): ?>
-			<div class="logo">
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-				<img class="<?php echo esc_attr( tdpersona_get_logo_class() ); ?>" src="<?php echo esc_url( $logo ); ?>" alt="">
-				</a>
-			</div> <!-- .logo -->
-			<?php endif; ?>
+	        
+            <?php tdpersona_the_custom_logo(); ?>
+            
 			<div class="brand-meta">
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 				<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>

@@ -25,16 +25,12 @@ if ( ! function_exists( 'tdpersona_setup' ) ) :
  * @since tdpersona 1.0
  */
 function tdpersona_setup() {
-
-	/**
-	 * Custom template tags for this theme.
+    
+    /*
+	 * Make theme available for translation.
+	 * Translations can be filed in the /languages/ directory.
 	 */
-	require( get_template_directory() . '/inc/template-tags.php' );
-
-	/**
-	 * Custom functions that act independently of the theme templates
-	 */
-	require( get_template_directory() . '/inc/extras.php' );
+	load_theme_textdomain( 'tdpersona', get_template_directory() . '/languages' );
 
 	/**
 	 * Add default posts and comments RSS feed links to head
@@ -63,15 +59,18 @@ function tdpersona_setup() {
  	add_theme_support( 'title-tag' );
 
 	/**
-	 * Customizer additions
-	 */
-	require( get_template_directory() . '/inc/customizer.php' );
-
-	/**
 	 * This theme uses wp_nav_menu() in one location.
 	 */
 	register_nav_menus( array(
 		'primary' => esc_html__( 'Primary Menu', 'tdpersona' ),
+	) );
+    
+    // Enable support for HTML5 markup.
+	add_theme_support( 'html5', array(
+		'comment-list',
+		'search-form',
+		'comment-form',
+		'gallery',
 	) );
 
 	/**
@@ -79,10 +78,15 @@ function tdpersona_setup() {
 	 */
 	add_theme_support( 'post-formats', array( 'audio', 'gallery', 'image', 'video', 'quote', 'link', 'aside', 'status', 'chat' ) );
 
-	/**
- 	 * Remove Gallery Inline Styling
- 	 */
-	add_filter( 'use_default_gallery_style', '__return_false' );
+	/*
+	 * Enable support for custom logo.
+	 */
+    add_theme_support( 'custom-logo', array(
+		'height'      => 600,
+		'width'       => 600,
+		'flex-height' => true,
+        'header-text' => array( 'site-title', 'site-description' ),
+	) );
 }
 endif; // tdpersona_setup
 add_action( 'after_setup_theme', 'tdpersona_setup' );
@@ -221,3 +225,18 @@ function tdpersona_add_format_standard_archive($query) {
 	}
 }
 add_action('pre_get_posts', 'tdpersona_add_format_standard_archive');
+
+/**
+ * Custom template tags for this theme.
+ */
+require( get_template_directory() . '/inc/template-tags.php' );
+
+/**
+ * Custom functions that act independently of the theme templates
+ */
+require( get_template_directory() . '/inc/extras.php' );
+
+/**
+ * Customizer additions
+ */
+require( get_template_directory() . '/inc/customizer.php' );
