@@ -955,7 +955,7 @@ object {
 /* =Navigation
 ----------------------------------------------- */
 .site-content .navigation {
-	margin: 0;
+	margin: 0 30px;
 	overflow: hidden;
 }
 
@@ -1000,8 +1000,8 @@ object {
 ----------------------------------------------- */
 #comments {
 	border-top: 1px solid #f9f9f9;
-	margin-top: 40px;
-	padding: 30px;
+	margin: 40px 30px 0;
+	padding: 30px 0;
 }
 
 #comments .comments-title {
@@ -1179,15 +1179,16 @@ object {
 	white-space: normal;
 }
 
-#comments .form-submit {
+#comments .form-submit,
+#comments .form-submit input {
 	margin-bottom: 0;
 }
 
 .comment-content a {
 	word-wrap: break-word;
 }
-.bypostauthor {
-}
+
+.bypostauthor {}
 
 /* =Widgets
 ----------------------------------------------- */
