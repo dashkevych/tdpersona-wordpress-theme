@@ -2,8 +2,7 @@
 /**
  * The template for displaying 404 pages (Not Found).
  *
- * @package tdpersona
- * @since tdpersona1.0
+ * @package tdPersona
  */
 
 get_header(); ?>
