@@ -100,6 +100,7 @@ function tdpersona_widgets_init() {
 
 	register_sidebar( array(
 		'name' => esc_html__( 'Sidebar', 'tdpersona' ),
+        'description'   => esc_html__( 'Appears in the sidebar section of the site.', 'tdpersona' ),
 		'id' => 'sidebar-4',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => '</aside>',
@@ -108,32 +109,14 @@ function tdpersona_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name' => esc_html__( 'Footer Widget #1', 'tdpersona' ),
+		'name' => esc_html__( 'Footer', 'tdpersona' ),
+        'description'   => esc_html__( 'Appears in the footer section of the site.', 'tdpersona' ),
 		'id' => 'sidebar-1',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget' => '</aside>',
+		'before_widget' => '<div class="footer-widget col-lg-4 col-md-4"><aside id="%1$s" class="widget %2$s">',
+		'after_widget' => '</aside></div>',
 		'before_title' => '<h4 class="widget-title">',
 		'after_title' => '</h4>',
 	) );
-
-	register_sidebar( array(
-		'name' => esc_html__( 'Footer Widget #2', 'tdpersona' ),
-		'id' => 'sidebar-2',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget' => '</aside>',
-		'before_title' => '<h4 class="widget-title">',
-		'after_title' => '</h4>',
-	) );
-
-	register_sidebar( array(
-		'name' => esc_html__( 'Footer Widget #3', 'tdpersona' ),
-		'id' => 'sidebar-3',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget' => '</aside>',
-		'before_title' => '<h4 class="widget-title">',
-		'after_title' => '</h4>',
-	) );
-
 }
 add_action( 'widgets_init', 'tdpersona_widgets_init' );
 

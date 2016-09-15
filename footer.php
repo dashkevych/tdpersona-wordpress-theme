@@ -12,27 +12,11 @@
 
 	<div class="footer-container">
 		<footer id="colophon" class="site-footer container" role="contentinfo">
-			<div class="row">
-
-				<?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
-				<div class="col-lg-4 col-md-4 col-sm-4">
-					<?php dynamic_sidebar( 'sidebar-1' ); ?>
-				</div><!-- .col -->
-				<?php endif; ?>
-
-				<?php if ( is_active_sidebar( 'sidebar-2' ) ) : ?>
-				<div class="col-lg-4 col-md-4 col-sm-4">
-					<?php dynamic_sidebar( 'sidebar-2' ); ?>
-				</div><!-- .col -->
-				<?php endif; ?>
-
-				<?php if ( is_active_sidebar( 'sidebar-3' ) ) : ?>
-				<div class="col-lg-4 col-md-4 col-sm-4">
-					<?php dynamic_sidebar( 'sidebar-3' ); ?>
-				</div><!-- .col -->
-				<?php endif; ?>
-
+			<?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
+            <div class="row">
+				<?php dynamic_sidebar( 'sidebar-1' ); ?>
 			</div><!-- .row -->
+            <?php endif; ?>
             
 			<div class="site-info">
 				<div class="site-info-inner">

@@ -3,7 +3,7 @@ Theme Name: tdPersona
 Theme URI: http://demo.themesharbor.com/tdpersona/
 Author: Themes Harbor
 Author URI: https://themesharbor.com/
-Description: tdPersona is minimalist WordPress Theme for any bloggers. This theme is a perfect choice for personal blogs. tdPersona supports all Post Formats that allow you to share your articles, images, videos, musics, quotes, etc. This theme is not just clean and simple but it’s also fully responsive.
+Description: tdPersona is simple WordPress theme for any type of bloggers. This theme is a perfect choice for personal blogs. tdPersona supports all Post Formats that allow you to share your articles, images, videos, musics, quotes, etc. This theme is not just clean and simple but it’s also fully responsive.
 Version: 2.0
 Text Domain: tdpersona
 License: GNU General Public License v2 or later
@@ -1378,6 +1378,10 @@ object {
 	margin-top: 30px;
 	padding: 10px 30px;
 	font-size: 14px;
+}
+
+.site-footer .footer-widget:nth-of-type(3n+1) {
+	clear: left;
 }
 
 /* =Contact Form
