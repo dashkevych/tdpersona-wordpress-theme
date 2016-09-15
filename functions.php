@@ -134,7 +134,7 @@ function tdpersona_google_fonts() {
 
 	if ( 'off' !== $sans_font ) {
 		$font_families = array();
-		$font_families[] = 'Source Sans Pro:300,300i,700,700i';
+		$font_families[] = 'Source Sans Pro:300,300i,600,600i';
 
 		$query_args = array(
 			'family' => urlencode( implode( '|', $font_families ) ),
@@ -250,3 +250,8 @@ require( get_template_directory() . '/inc/extras.php' );
  * Customizer additions
  */
 require( get_template_directory() . '/inc/customizer.php' );
+
+/**
+ * Load Dashboard help file.
+ */
+require get_template_directory() . '/inc/help/helper.php';

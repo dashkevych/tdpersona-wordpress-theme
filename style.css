@@ -2,15 +2,15 @@
 Theme Name: tdPersona
 Theme URI: http://demo.themesharbor.com/tdpersona/
 Author: Themes Harbor
-Author URI: https://themesharbor.com/
-Description: tdPersona is simple WordPress theme for any type of bloggers. This theme is a perfect choice for personal blogs. tdPersona supports all Post Formats that allow you to share your articles, images, videos, musics, quotes, etc. This theme is not just clean and simple but it’s also fully responsive.
+Author URI: https://themesharbor.com
+Description: tdPersona is a simple WordPress theme for any type of bloggers. This theme is a perfect choice for personal blogs. tdPersona comes with a support for all post Formats. Moreover, this theme is not only clean and simple but it’s also fully responsive.
 Version: 2.0
 Text Domain: tdpersona
 License: GNU General Public License v2 or later
 License URI: license.txt
-Tags: custom-background, custom-colors, one-column, sticky-post, featured-images, custom-menu, theme-options, threaded-comments
+Tags: custom-background, custom-colors, one-column, sticky-post, featured-images, custom-menu, theme-options, threaded-comments, footer-widgets, post-formats, blog
 
-tdPersona WordPress Theme, copyright 2014 Taras Dashkevych
+tdPersona WordPress Theme, copyright 2016 Taras Dashkevych
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -1251,6 +1251,7 @@ object {
 
 .widget-title {
 	color: #eeeeee;
+    font-weight: bold;
 }
 
 .widget p {

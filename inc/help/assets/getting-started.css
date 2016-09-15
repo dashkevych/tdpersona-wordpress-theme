@@ -1,0 +1,198 @@
+/*--------------------------------------------------------------
+General
+--------------------------------------------------------------*/
+.clearfix:before, .clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after { 
+    clear: both 
+}
+
+.clearfix { 
+    zoom: 1 
+}
+
+.getting-started {
+    margin: 55px 55px 35px 35px;
+}
+
+.getting-started * {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.getting-started img {
+	display: inline-block;
+	width: auto\9;
+	height: auto;
+	max-width: 100%;
+	vertical-align: middle;
+	border: 0;
+	-ms-interpolation-mode: bicubic;
+}
+
+.getting-started pre {
+	overflow: auto;
+    background: #f2f3f3;
+	font-family: "Courier 10 Pitch", Courier, monospace;
+	font-size: 0.9375rem;
+	line-height: 1.6;
+	max-width: 100%;
+	overflow: auto;
+	padding: 1.6em;
+}
+
+.getting-started hr {
+    border-bottom: none;
+    border-color: #f2f3f3;
+    margin: 40px -40px;
+}
+
+.getting-started .social-col {
+    width: 45%;
+    float: left;
+    list-style: circle;
+    margin-left: 20px;
+    margin-bottom: 0;
+}
+
+/*--------------------------------------------------------------
+Header
+--------------------------------------------------------------*/
+.getting-started .theme-screenshot {
+    float: right;
+    width: 30%;
+}
+
+.getting-started .theme-info {
+    width: 65%;
+    float: left;
+}
+
+.getting-started .theme-screenshot a,
+.getting-started .theme-screenshot span {
+    font-weight: bold;
+}
+
+.getting-started .theme-screenshot img {
+    background: #ffffff;
+    padding: 4px;
+}
+
+.getting-started .theme-info .theme-meta p {
+    float: left;
+    margin-top: 0;
+    color: #555d66;
+    font-size: 13px;
+}
+
+.getting-started .theme-info .theme-version:before {
+    content: "/";
+    margin-right: 6px;
+    padding-left: 6px;
+}
+
+.getting-started .theme-info .section-title {
+    font-size: 31px;
+    font-weight: bold;
+    margin: 25px 0 21px;
+    line-height: 1.25;
+
+}
+
+.getting-started .theme-info .theme-description {
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 23px;
+    max-width: 50rem;
+    margin-top: 0;
+}
+
+/*--------------------------------------------------------------
+Body
+--------------------------------------------------------------*/
+.getting-started .page-body {
+    margin-top: 35px;
+    padding-top: 35px;
+    line-height: 1.7;
+    border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+.getting-started .page-body .page-content {
+    background: #ffffff;
+    float: left;
+    width: 65%;
+    padding: 35px 40px;
+}
+
+.getting-started .page-body .page-sidebar {
+    float: right;
+    width: 30%;
+    padding: 35px 0;
+    color: #555d66;
+    font-size: 13px; 
+}
+
+.getting-started .page-body .page-content p:first-child,
+.getting-started .page-body .page-content p:last-child,
+.getting-started .page-body .page-content hr.first-line {
+    display: none;
+}
+
+.getting-started .page-body .page-sidebar .widget-title {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.getting-started .page-body .page-sidebar .page-widget {
+    margin-bottom: 35px;
+}
+
+.getting-started .page-body .page-sidebar .rating-widget a {
+    text-decoration: none;
+}
+
+.getting-started .page-body .page-sidebar .support-widget ul {
+    list-style: disc;
+    margin-left: 20px;
+}
+
+/*--------------------------------------------------------------
+Responsive
+--------------------------------------------------------------*/
+@media only screen and (max-width:768px) { 
+    .getting-started .page-header .theme-screenshot,
+    .getting-started .page-header .theme-info,
+    .getting-started .page-body .page-content,
+    .getting-started .page-body .page-sidebar,
+    .getting-started .social-col {
+        float: none;
+        width: 100%;
+    }
+    
+    .getting-started .page-header .theme-screenshot {
+        margin: 35px 0 0;
+    }
+    
+    .getting-started .single-panel {
+        border-bottom: 1px solid #f2f3f3;
+    }
+    
+    .getting-started .sidebar-widget {
+        border: none;
+    }
+    
+    .getting-started {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    
+    .getting-started .page-body .page-sidebar {
+        padding: 35px 40px 10px;
+        background: #ffffff;
+        margin-top: 1px;
+    }
+}
