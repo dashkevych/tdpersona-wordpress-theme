@@ -4,7 +4,7 @@ Theme URI: http://demo.themesharbor.com/tdpersona/
 Author: Themes Harbor
 Author URI: https://themesharbor.com
 Description: tdPersona is a simple WordPress theme for any type of bloggers. This theme is a perfect choice for personal blogs. tdPersona comes with a support for all post Formats. Moreover, this theme is not only clean and simple but it’s also fully responsive.
-Version: 2.0
+Version: 2.0.1
 Text Domain: tdpersona
 License: GNU General Public License v2 or later
 License URI: license.txt
@@ -14,12 +14,11 @@ tdPersona WordPress Theme, copyright 2016 Taras Dashkevych
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
-
 */
 
-
-/* =Global
------------------------------------------------ */
+/*--------------------------------------------------------------
+# Global
+--------------------------------------------------------------*/
 body {
 	background: #fbfbfb;
 	font-family: 'Source Sans Pro', "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -45,14 +44,13 @@ img {
 
 ::selection {
 	background: #B6CD5D;
-	color: #fff;
+	color: #ffffff;
 }
 
 ::-moz-selection {
 	background: #B6CD5D;
-	color: #fff;
+	color: #ffffff;
 }
-
 
 a {
 	color: #00aee8;
@@ -67,7 +65,13 @@ a:hover {
 	text-decoration: none;
 }
 
-p, ul, ol {
+p, ul, ol, dd, dl, address, pre,
+.jetpack-video-wrapper,
+.mejs-container,
+.wp-playlist,
+table, .table,
+.tiled-gallery,
+.slideshow-window {
 	margin-bottom: 28px;
 }
 
@@ -82,6 +86,19 @@ p, ul, ol {
 	box-shadow: none;
 }
 
+.site-content .navigation .nav-previous a:before,
+.site-content .navigation .nav-next a:after,
+.has-icon:before {
+	font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+}
+
+/*--------------------------------------------------------------
+# Forms
+--------------------------------------------------------------*/
 input[type="text"],
 input[type="password"],
 input[type="datetime"],
@@ -166,17 +183,9 @@ input[type="submit"]:hover {
 	background-color: #f2f2f2;
 }
 
-.site-content .navigation .nav-previous a:before,
-.site-content .navigation .nav-next a:after,
-.has-icon:before {
-	font-family: FontAwesome;
-    font-style: normal;
-    font-weight: normal;
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
-}
-
-/* Alignment */
+/*--------------------------------------------------------------
+# Alignments
+--------------------------------------------------------------*/
 .alignleft {
 	display: inline;
 	float: left;
@@ -193,18 +202,12 @@ input[type="submit"]:hover {
 	margin: 0 auto 15px;
 }
 
-/* Text meant only for screen readers */
-.assistive-text {
-	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
-	clip: rect(1px, 1px, 1px, 1px);
-	position: absolute !important;
-}
-
 /*--------------------------------------------------------------
 # Accessibility
 --------------------------------------------------------------*/
 /* Text meant only for screen readers. */
-.screen-reader-text {
+.screen-reader-text,
+.assistive-text {
 	clip: rect(1px, 1px, 1px, 1px);
 	position: absolute !important;
 	height: 1px;
@@ -237,8 +240,9 @@ input[type="submit"]:hover {
 	outline: 0;
 }
 
-/* =Header
------------------------------------------------ */
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
 #masthead {
 	position: relative;
 }
@@ -292,8 +296,9 @@ input[type="submit"]:hover {
 	text-align: center !important;
 }
 
-/* =Menu
------------------------------------------------ */
+/*--------------------------------------------------------------
+# Menu
+--------------------------------------------------------------*/
 .top-navigation {
 	position: fixed;
 	top: 0;
@@ -411,8 +416,9 @@ input[type="submit"]:hover {
 	margin: 10px 0 0;
 }
 
-/* =Post Formats Menu
------------------------------------------------ */
+/*--------------------------------------------------------------
+# Post Formats Menu
+--------------------------------------------------------------*/
 .post-formats-navigation {
 	width: 100%;
 	text-align: center;
@@ -478,12 +484,9 @@ input[type="submit"]:hover {
     box-shadow:  0px 0px 1px 1px rgba(0, 0, 0, 0.1);
 }
 
-.post-formats-navigation ul li a {
-
-}
-
-/* =Content
------------------------------------------------ */
+/*--------------------------------------------------------------
+# Content
+--------------------------------------------------------------*/
 .site-content {
 	background: #ffffff;
 	border: 1px solid rgba(200, 200, 200, 0.2);
@@ -563,14 +566,14 @@ input[type="submit"]:hover {
 }
 
 .entry-header .entry-date .m-d {
-	color: #444;
+	color: #444444;
 	font-size: 1.4em;
 	line-height: 1;
 }
 
 .entry-header .entry-date .year {
 	font-size: 1.6em;
-	color: #ccc;
+	color: #cccccc;
 	line-height: 1;
 }
 
@@ -652,7 +655,7 @@ input[type="submit"]:hover {
 	padding: 20px 30px;
 	margin-bottom: 28px;
 	background: #fcfcfc;
-	border-left: 5px solid #eee;
+	border-left: 5px solid #eeeeee;
 	line-height: 1.4;
 	font-size: 19px;
 	font-weight: 400;
@@ -677,8 +680,9 @@ input[type="submit"]:hover {
 
 .sticky {}
 
-/* =Quote Post
------------------------------------------------ */
+/*--------------------------------------------------------------
+# Quote Post
+--------------------------------------------------------------*/
 .format-quote .post-icon-box i {
 	font-size: 0.8em;
 	padding: 2px 3px;
@@ -691,8 +695,9 @@ input[type="submit"]:hover {
 	display: none;
 }
 
-/* =Link Post
------------------------------------------------ */
+/*--------------------------------------------------------------
+# Link Post
+--------------------------------------------------------------*/
 .format-link .post-icon-box i {
 	font-size: 0.9em;
 	padding: 1px 1px;
@@ -700,8 +705,9 @@ input[type="submit"]:hover {
 	left: 0;
 }
 
-/* =Aside Post
------------------------------------------------ */
+/*--------------------------------------------------------------
+# Aside Post
+--------------------------------------------------------------*/
 .format-aside.post-index .entry-content {
 	font-size: 1.4em;
 }
@@ -713,8 +719,9 @@ input[type="submit"]:hover {
 	left: 0;
 }
 
-/* =Status Post
------------------------------------------------ */
+/*--------------------------------------------------------------
+# Status Post
+--------------------------------------------------------------*/
 .blog .format-status .entry-content,
 .archive .format-status .entry-content,
 .search .format-status .entry-content {
@@ -734,8 +741,9 @@ input[type="submit"]:hover {
 	left: 0px;
 }
 
-/* =Gallery Post
------------------------------------------------ */
+/*--------------------------------------------------------------
+# Gallery Post
+--------------------------------------------------------------*/
 .format-gallery .post-icon-box i {
 	font-size: 0.78em;
 	padding: 1px 1px;
@@ -743,8 +751,9 @@ input[type="submit"]:hover {
 	left: 0;
 }
 
-/* =Image Post
------------------------------------------------ */
+/*--------------------------------------------------------------
+# Image Post
+--------------------------------------------------------------*/
 .format-image .post-icon-box i {
 	font-size: 0.78em;
 	padding: 1px 1px;
@@ -752,8 +761,9 @@ input[type="submit"]:hover {
 	left: 0;
 }
 
-/* =Audio Post
------------------------------------------------ */
+/*--------------------------------------------------------------
+# Audio Post
+--------------------------------------------------------------*/
 .format-audio .post-icon-box i {
 	font-size: 0.9em;
 	padding: 0 1px;
@@ -761,8 +771,9 @@ input[type="submit"]:hover {
 	left: 0;
 }
 
-/* =Video Post
------------------------------------------------ */
+/*--------------------------------------------------------------
+# Video Post
+--------------------------------------------------------------*/
 .format-video .post-icon-box i {
 	font-size: 0.8em;
 	padding: 1px;
@@ -770,8 +781,9 @@ input[type="submit"]:hover {
 	left: 0;
 }
 
-/* =Chat Post
------------------------------------------------ */
+/*--------------------------------------------------------------
+# Chat Post
+--------------------------------------------------------------*/
 .format-chat .post-icon-box i {
 	font-size: 0.9em;
 	padding: 0 1px;
@@ -779,15 +791,17 @@ input[type="submit"]:hover {
 	left: 0;
 }
 
-/* =Asides
------------------------------------------------ */
+/*--------------------------------------------------------------
+# Asides
+--------------------------------------------------------------*/
 .blog .format-aside .entry-title,
 .archive .format-aside .entry-title {
 	display: none;
 }
 
-/* =Media
------------------------------------------------ */
+/*--------------------------------------------------------------
+# Media
+--------------------------------------------------------------*/
 img {
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
@@ -820,13 +834,21 @@ img.alignnone {
 	font-size: 13px;
 }
 
-.wp-caption.aligncenter { margin: 20px auto; }
+.wp-caption.aligncenter { 
+    margin: 20px auto; 
+}
 
-.wp-caption.alignleft { margin-left: 0; }
+.wp-caption.alignleft { 
+    margin-left: 0; 
+}
 
-.wp-caption.alignright { margin-right: 0; }
+.wp-caption.alignright { 
+    margin-right: 0; 
+}
 
-.wp-caption.alignnone { margin-left: 0; }
+.wp-caption.alignnone { 
+    margin-left: 0; 
+}
 
 .wp-caption img,
 .wp-caption img a {
@@ -865,7 +887,6 @@ img.alignnone {
 	max-width: 47.5%;
 	max-width: -webkit-calc(50% - 10px);
 	max-width: calc(50% - 10px);
-
 }
 
 .gallery-columns-3 .gallery-item {
@@ -967,9 +988,9 @@ object {
 	max-width: 100%;
 }
 
-
-/* =Navigation
------------------------------------------------ */
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
 .site-content .navigation {
 	margin: 0 30px;
 	overflow: hidden;
@@ -1012,8 +1033,9 @@ object {
 	border-top: 1px solid #f9f9f9;
 }
 
-/* =Comments
------------------------------------------------ */
+/*--------------------------------------------------------------
+# Comments
+--------------------------------------------------------------*/
 #comments {
 	border-top: 1px solid #f9f9f9;
 	margin: 40px 30px 0;
@@ -1064,9 +1086,9 @@ object {
 	top: 0;
 	left: 0;
 
-	-webkit-border-radius:50%;
-	-moz-border-radius:50%;
-	border-radius:50%;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
 }
 
 #comments .comment-author,
@@ -1090,7 +1112,7 @@ object {
 
 #comments .comment-edit-link {
 	margin-left: 2px;
-	position:relative;
+	position: relative;
 }
 
 #comments .comment-edit-link:before {
@@ -1099,11 +1121,12 @@ object {
 }
 
 #comments .comment-content li > ul,
-#comments .comment-content li > ol {
-	margin-bottom: 0;
-}
-
-#comments .comment-content > :last-child {
+#comments .comment-content li > ol,
+#comments .comment-content > :last-child,
+#comments .comment-content ul li,
+#comments .comment-content ol li,
+#comments .form-submit,
+#comments .form-submit input {
 	margin-bottom: 0;
 }
 
@@ -1127,11 +1150,6 @@ object {
 #comments .comment-content ul ul,
 #comments .comment-content ol ul {
 	list-style-type: circle;
-}
-
-#comments .comment-content ul li,
-#comments .comment-content ol li {
-	margin-bottom: 0;
 }
 
 #comments .comment-content ol {
@@ -1181,7 +1199,7 @@ object {
 #comments .comment-meta a,
 #respond .logged-in-as,
 #respond .logged-in-as a {
-	color: #aaa;
+	color: #aaaaaa;
 }
 
 #comments .comment-metadata a,
@@ -1194,19 +1212,15 @@ object {
 	white-space: normal;
 }
 
-#comments .form-submit,
-#comments .form-submit input {
-	margin-bottom: 0;
-}
-
 .comment-content a {
 	word-wrap: break-word;
 }
 
 .bypostauthor {}
 
-/* =Widgets
------------------------------------------------ */
+/*--------------------------------------------------------------
+# Widgets
+--------------------------------------------------------------*/
 #secondary .widget-inner {
 	display: none;
 	width: 0;
@@ -1283,8 +1297,9 @@ object {
 	display: none;
 }
 
-/* =Archive&Search Page
------------------------------------------------ */
+/*--------------------------------------------------------------
+# Archive and Search Pages
+--------------------------------------------------------------*/
 .taxonomy-description,
 .page-title {
 	text-align: center;
@@ -1303,8 +1318,9 @@ object {
 	margin-bottom: 30px;
 }
 
-/* =404
------------------------------------------------ */
+/*--------------------------------------------------------------
+# 404
+--------------------------------------------------------------*/
 .error404 .entry-header,
 .error404 .sub-info,
 .no-results .entry-header,
@@ -1328,8 +1344,9 @@ object {
 	margin: 10px auto 0;
 }
 
-/* =Single Image Attachment Page
------------------------------------------------ */
+/*--------------------------------------------------------------
+# Single Image Attachment Page
+--------------------------------------------------------------*/
 .attachment.single .attachment a img {
 	display: block;
 	padding: 10px;
@@ -1385,8 +1402,9 @@ object {
 	clear: left;
 }
 
-/* =Contact Form
------------------------------------------------ */
+/*--------------------------------------------------------------
+# Contact Form
+--------------------------------------------------------------*/
 .wpcf7 textarea {
 	min-height: 240px;
 }
